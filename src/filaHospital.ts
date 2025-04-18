@@ -8,6 +8,7 @@ export class filaHospital {
     fila_azul: Paciente[] = [];
 
     fila_geral: Paciente[] = [];
+    matriz = [this.fila_geral, this.fila_laranja, this.fila_amarelo, this.fila_verde, this.fila_azul];
 
     tempos_maximos: Record<Prioridade, number> = {
         vermelho: 0,
@@ -49,49 +50,10 @@ export class filaHospital {
     }
 
     printar_filas() :void {
-        console.log('Fila geral: ');
-        if (this.fila_geral.length == 0) {
-            console.log('Fila vazia.');
-            console.log();
-        } else {
-            console.log(this.fila_geral);
-            console.log();
-        }
-
-        console.log('Fila laranja: ');
-        if (this.fila_laranja.length == 0) {
-            console.log('Fila vazia.');
-            console.log();
-        } else {
-        console.log(this.fila_laranja);
-        console.log();
-        }
-
-        console.log('Fila amarelo: ');
-        if (this.fila_amarelo.length == 0) {
-            console.log('Fila vazia.');
-            console.log();
-        } else {
-        console.log(this.fila_amarelo);
-        console.log();
-        }
-
-        console.log('Fila verde: ');
-        if (this.fila_verde.length == 0) {
-            console.log('Fila vazia.');
-            console.log();
-        } else {
-        console.log(this.fila_verde);
-        console.log();
-        }
-
-        console.log('Fila azul: ');
-        if (this.fila_azul.length == 0) {
-            console.log('Fila vazia.');
-            console.log();
-        } else {
-        console.log(this.fila_azul);
-        console.log();
+        for(let i = 0; i < this.matriz.length; i++) {
+            for (let c = 0; c < this.matriz[i].length; c++) {
+                console.log(this.matriz[i][c]);
+            }
         }
     }
 }
