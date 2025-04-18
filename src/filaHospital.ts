@@ -52,7 +52,11 @@ export class filaHospital {
     printar_filas() :void {
         for(let i = 0; i < this.matriz.length; i++) {
             for (let c = 0; c < this.matriz[i].length; c++) {
+                if (this.matriz[i].length == 0) {
+                    console.log("Lista vazia.")
+                } else {
                 console.log(this.matriz[i][c]);
+                }
             }
         }
     }
